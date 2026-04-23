@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurdish Biology — ئینسایکلۆپیدیای نەخۆشییەکانی جیهان</title>
+<meta name="description" content="Kurdish Biology — زانیاری تەواوی نەخۆشی، ڤایرۆس، باکتریا، ڕووەک و داری دەرمانی بە کوردی سۆرانی">
+<meta name="keywords" content="kurdish biology, kurdishbiology, نەخۆشی کوردی, بیەلۆجی کوردی, ڤایرۆس, باکتریا, نەخۆشییەکان">
+<meta name="author" content="Kurdish Biology">
+<meta property="og:title" content="Kurdish Biology — ئینسایکلۆپیدیای نەخۆشییەکانی جیهان">
+<meta property="og:description" content="زانیاری تەواوی نەخۆشی و ڤایرۆس بە کوردی">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@200;300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060810;
+  --surface: #0d1020;
+  --card: #111528;
+  --border: #1e2540;
+  --border2: #2a3560;
+  --accent: #4f8ef7;
+  --accent2: #7c3aed;
+  --accent3: #10b981;
+  --accent4: #f59e0b;
+  --accent5: #ef4444;
+  --accent6: #ec4899;
+  --text: #e2e8f0;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --glow: rgba(79,142,247,0.15);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans Arabic',sans-serif;min-height:100vh;direction:rtl;}
+
+.bg-grid{position:fixed;inset:0;z-index:0;pointer-events:none;background-image:linear-gradient(rgba(79,142,247,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(79,142,247,0.03) 1px,transparent 1px);background-size:40px 40px;}
+.bg-orb1{position:fixed;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(79,142,247,0.08) 0%,transparent 70%);pointer-events:none;z-index:0;animation:drift1 20s ease-in-out infinite;}
+.bg-orb2{position:fixed;bottom:-150px;left:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(124,58,237,0.06) 0%,transparent 70%);pointer-events:none;z-index:0;animation:drift2 25s ease-in-out infinite;}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(-30px,40px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+
+header{position:relative;z-index:10;padding:2.5rem 2rem 1.5rem;border-bottom:1px solid var(--border);background:linear-gradient(180deg,rgba(79,142,247,0.05) 0%,transparent 100%);text-align:center;}
+.logo-row{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:0.75rem;}
+.logo-icon{width:56px;height:56px;border-radius:16px;background:linear-gradient(135deg,var(--accent) 0%,var(--accent2) 100%);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 0 30px rgba(79,142,247,0.4);animation:logoGlow 3s ease-in-out infinite;}
+@keyframes logoGlow{0%,100%{box-shadow:0 0 30px rgba(79,142,247,0.4)}50%{box-shadow:0 0 50px rgba(79,142,247,0.7)}}
+header h1{font-size:clamp(1.6rem,4vw,2.8rem);font-weight:900;background:linear-gradient(135deg,#60a5fa 0%,#a78bfa 50%,#34d399 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+header p{color:var(--text2);font-size:0.9rem;font-weight:300;margin-top:0.3rem;}
+.ai-badge{display:inline-flex;align-items:center;gap:0.4rem;background:linear-gradient(135deg,rgba(79,142,247,0.15),rgba(124,58,237,0.15));border:1px solid rgba(79,142,247,0.3);border-radius:999px;padding:0.3rem 0.9rem;font-size:0.75rem;color:var(--accent);margin-top:0.75rem;}
+.ai-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+
+.admin-trigger{position:fixed;bottom:1.5rem;left:1.5rem;z-index:200;width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));border:none;cursor:pointer;font-size:1.3rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 20px rgba(124,58,237,0.5);transition:transform 0.2s;}
+.admin-trigger:hover{transform:scale(1.1);}
+
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:300;display:none;align-items:center;justify-content:center;backdrop-filter:blur(4px);}
+.modal-overlay.show{display:flex;}
+.modal-box{background:var(--card);border:1px solid var(--border2);border-radius:20px;width:min(620px,96vw);max-height:92vh;overflow-y:auto;padding:2rem;}
+.modal-box h2{font-size:1.2rem;font-weight:700;margin-bottom:1.5rem;color:var(--text);}
+.form-group{margin-bottom:1rem;}
+.form-group label{display:block;font-size:0.78rem;color:var(--text2);margin-bottom:0.35rem;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:0.65rem 0.9rem;background:var(--surface);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:inherit;font-size:0.85rem;direction:rtl;outline:none;transition:border-color 0.2s;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--accent);}
+.form-group select option{background:var(--card);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;}
+.btn-row{display:flex;gap:0.75rem;margin-top:1.25rem;flex-wrap:wrap;}
+.btn-primary{flex:1;padding:0.7rem;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-family:inherit;font-size:0.88rem;font-weight:600;cursor:pointer;transition:opacity 0.2s;min-width:100px;}
+.btn-primary:hover{opacity:0.88;}
+.btn-secondary{padding:0.7rem 1.2rem;border-radius:10px;background:transparent;border:1px solid var(--border2);color:var(--text2);font-family:inherit;font-size:0.88rem;cursor:pointer;transition:all 0.2s;}
+.btn-secondary:hover{border-color:var(--accent);color:var(--accent);}
+.btn-warn{padding:0.7rem 1.2rem;border-radius:10px;background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:var(--accent5);font-family:inherit;font-size:0.88rem;cursor:pointer;transition:all 0.2s;}
+.btn-warn:hover{background:rgba(239,68,68,0.2);}
+.login-form{display:flex;flex-direction:column;gap:0.75rem;}
+
+.admin-list{margin-top:1.5rem;border-top:1px solid var(--border);padding-top:1rem;}
+.admin-list-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.75rem;}
+.admin-list-header h3{font-size:0.85rem;color:var(--text2);}
+.admin-search{padding:0.45rem 0.75rem;background:var(--surface);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:inherit;font-size:0.78rem;direction:rtl;outline:none;width:180px;}
+.admin-search:focus{border-color:var(--accent);}
+.admin-entry{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:0.5rem;overflow:hidden;transition:border-color 0.2s;}
+.admin-entry:hover{border-color:var(--border2);}
+.admin-entry-header{display:flex;align-items:center;justify-content:space-between;padding:0.6rem 0.85rem;cursor:pointer;}
+.admin-entry-info{flex:1;}
+.admin-entry-name{font-weight:600;color:var(--text);font-size:0.84rem;}
+.admin-entry-en{color:var(--text3);font-size:0.71rem;margin-top:1px;}
+.admin-entry-badges{display:flex;gap:0.35rem;margin-top:0.25rem;flex-wrap:wrap;}
+.admin-badge{font-size:0.65rem;padding:0.1rem 0.45rem;border-radius:4px;font-weight:600;}
+.admin-entry-actions{display:flex;gap:0.4rem;flex-shrink:0;}
+.edit-btn{background:rgba(79,142,247,0.12);border:1px solid rgba(79,142,247,0.3);color:var(--accent);border-radius:6px;padding:0.25rem 0.55rem;cursor:pointer;font-size:0.73rem;transition:all 0.2s;font-family:inherit;}
+.edit-btn:hover{background:rgba(79,142,247,0.25);}
+.del-btn{background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.3);color:var(--accent5);border-radius:6px;padding:0.25rem 0.55rem;cursor:pointer;font-size:0.73rem;transition:all 0.2s;font-family:inherit;}
+.del-btn:hover{background:rgba(239,68,68,0.25);}
+
+.inline-edit{display:none;padding:0.85rem;border-top:1px solid var(--border);background:rgba(79,142,247,0.03);}
+.inline-edit.open{display:block;}
+.inline-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0.6rem;}
+.inline-field{display:flex;flex-direction:column;gap:0.25rem;}
+.inline-field label{font-size:0.7rem;color:var(--text3);}
+.inline-field input,.inline-field select{padding:0.5rem 0.7rem;background:var(--card);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:inherit;font-size:0.8rem;direction:rtl;outline:none;transition:border-color 0.2s;}
+.inline-field input:focus,.inline-field select:focus{border-color:var(--accent);}
+.inline-field select option{background:var(--card);}
+.inline-save-row{display:flex;gap:0.5rem;margin-top:0.65rem;}
+.inline-save{padding:0.45rem 1rem;border-radius:7px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-family:inherit;font-size:0.78rem;font-weight:600;cursor:pointer;transition:opacity 0.2s;}
+.inline-save:hover{opacity:0.85;}
+.inline-cancel{padding:0.45rem 0.85rem;border-radius:7px;background:transparent;border:1px solid var(--border2);color:var(--text3);font-family:inherit;font-size:0.78rem;cursor:pointer;transition:all 0.2s;}
+.inline-cancel:hover{border-color:var(--accent5);color:var(--accent5);}
+
+.app{position:relative;z-index:10;display:grid;grid-template-columns:300px 1fr;min-height:calc(100vh - 160px);}
+
+.sidebar{border-left:1px solid var(--border);background:var(--surface);overflow-y:auto;max-height:calc(100vh - 160px);position:sticky;top:0;}
+.search-area{padding:1rem;border-bottom:1px solid var(--border);}
+.search-box{position:relative;}
+.search-box input{width:100%;padding:0.7rem 0.9rem 0.7rem 2.5rem;background:var(--card);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:inherit;font-size:0.85rem;direction:rtl;outline:none;transition:border-color 0.2s,box-shadow 0.2s;}
+.search-box input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--glow);}
+.search-icon{position:absolute;left:0.75rem;top:50%;transform:translateY(-50%);color:var(--text3);}
+.cat-tabs{display:flex;flex-wrap:wrap;gap:0.4rem;padding:0.75rem;border-bottom:1px solid var(--border);}
+.cat-tab{padding:0.3rem 0.7rem;border-radius:8px;font-size:0.75rem;border:1px solid var(--border2);background:transparent;color:var(--text2);cursor:pointer;font-family:inherit;transition:all 0.2s;white-space:nowrap;}
+.cat-tab:hover{border-color:var(--accent);color:var(--accent);}
+.cat-tab.active{background:var(--accent);border-color:var(--accent);color:white;font-weight:600;}
+.list-count{padding:0.5rem 1rem;font-size:0.75rem;color:var(--text3);}
+.list-count span{color:var(--accent);font-weight:700;}
+.entry-list{padding:0 0.5rem 1rem;}
+.entry-item{padding:0.65rem 0.75rem;border-radius:8px;cursor:pointer;transition:all 0.15s;border:1px solid transparent;margin-bottom:3px;}
+.entry-item:hover{background:rgba(79,142,247,0.07);border-color:var(--border2);}
+.entry-item.active{background:rgba(79,142,247,0.12);border-color:var(--accent);}
+.entry-item-name{font-size:0.85rem;font-weight:600;color:var(--text);}
+.entry-item-en{font-size:0.7rem;color:var(--text3);margin-top:1px;font-style:italic;}
+.entry-item-cat{display:inline-flex;align-items:center;gap:0.25rem;font-size:0.65rem;padding:0.1rem 0.4rem;border-radius:4px;margin-top:0.25rem;font-weight:600;}
+
+.main-panel{padding:1.5rem;overflow-y:auto;}
+.welcome{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;padding:2rem;}
+.welcome-icon{font-size:5rem;margin-bottom:1.5rem;animation:float 4s ease-in-out infinite;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.welcome h2{font-size:1.8rem;font-weight:700;color:var(--text);margin-bottom:0.75rem;}
+.welcome p{color:var(--text2);max-width:500px;line-height:1.8;font-weight:300;}
+.quick-cats{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:2rem;justify-content:center;}
+.quick-cat{padding:0.5rem 1.1rem;border-radius:999px;border:1px solid var(--border2);background:var(--card);color:var(--text2);cursor:pointer;font-family:inherit;font-size:0.83rem;transition:all 0.2s;}
+.quick-cat:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+.ai-search-box{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:1.25rem;margin-top:2rem;width:100%;max-width:600px;}
+.ai-search-box h3{font-size:0.9rem;color:var(--accent);margin-bottom:0.75rem;font-weight:600;}
+.ai-input-row{display:flex;gap:0.5rem;}
+.ai-input-row input{flex:1;padding:0.65rem 0.9rem;background:var(--surface);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:inherit;font-size:0.85rem;direction:rtl;outline:none;transition:border-color 0.2s;}
+.ai-input-row input:focus{border-color:var(--accent);}
+.ai-btn{padding:0.65rem 1.2rem;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));border:none;color:white;font-family:inherit;font-size:0.85rem;cursor:pointer;transition:opacity 0.2s,transform 0.1s;white-space:nowrap;font-weight:600;}
+.ai-btn:hover{opacity:0.9;transform:translateY(-1px);}
+.ai-btn:disabled{opacity:0.5;cursor:not-allowed;transform:none;}
+
+.stats-dashboard{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:1.5rem;margin-bottom:1rem;}
+.stats-dashboard h3{font-size:1rem;font-weight:700;color:var(--text);margin-bottom:1.25rem;display:flex;align-items:center;gap:0.5rem;}
+.chart-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.chart-box{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1rem;}
+.chart-box h4{font-size:0.78rem;color:var(--text2);margin-bottom:0.75rem;font-weight:600;}
+.bar-chart{display:flex;flex-direction:column;gap:0.45rem;}
+.bar-row{display:flex;align-items:center;gap:0.5rem;}
+.bar-label{font-size:0.72rem;color:var(--text2);width:80px;text-align:right;flex-shrink:0;}
+.bar-track{flex:1;height:14px;background:var(--border);border-radius:999px;overflow:hidden;}
+.bar-fill{height:100%;border-radius:999px;transition:width 1s ease;}
+.bar-count{font-size:0.7rem;color:var(--text3);width:24px;text-align:left;flex-shrink:0;}
+.pie-wrapper{display:flex;align-items:center;gap:1rem;}
+.pie-legend{display:flex;flex-direction:column;gap:0.3rem;}
+.pie-item{display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;color:var(--text2);}
+.pie-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0;}
+.top-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;margin-top:1rem;}
+.top-stat{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:0.75rem;text-align:center;}
+.top-stat-num{font-size:1.4rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.top-stat-label{font-size:0.68rem;color:var(--text3);margin-top:0.2rem;}
+
+.detail-panel{display:none;}
+.detail-panel.show{display:block;}
+.detail-header{background:var(--card);border:1px solid var(--border2);border-radius:16px;padding:1.5rem;margin-bottom:1rem;border-right:4px solid var(--entry-color,var(--accent));}
+.detail-num{font-size:0.75rem;color:var(--text3);margin-bottom:0.25rem;}
+.detail-title{font-size:1.6rem;font-weight:900;color:var(--text);margin-bottom:0.25rem;line-height:1.3;}
+.detail-en{font-size:0.85rem;color:var(--text2);font-style:italic;margin-bottom:0.75rem;}
+.detail-meta{display:flex;flex-wrap:wrap;gap:0.5rem;}
+.meta-chip{display:inline-flex;align-items:center;gap:0.3rem;padding:0.3rem 0.75rem;border-radius:999px;font-size:0.75rem;font-weight:600;border:1px solid;}
+.ai-content-area{background:var(--card);border:1px solid var(--border2);border-radius:16px;overflow:hidden;}
+.ai-content-tabs{display:flex;border-bottom:1px solid var(--border2);overflow-x:auto;}
+.ai-content-tab{padding:0.75rem 1.1rem;border:none;background:transparent;color:var(--text2);font-family:inherit;font-size:0.82rem;cursor:pointer;white-space:nowrap;transition:all 0.2s;border-bottom:2px solid transparent;}
+.ai-content-tab:hover{color:var(--text);}
+.ai-content-tab.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600;}
+.ai-content-body{padding:1.5rem;min-height:300px;}
+.loading-state{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;gap:1rem;}
+.dna-spinner{width:40px;height:40px;border:3px solid var(--border2);border-top-color:var(--accent);border-radius:50%;animation:spin 0.8s linear infinite;}
+@keyframes spin{to{transform:rotate(360deg)}}
+.loading-text{color:var(--text2);font-size:0.9rem;}
+.ai-response{line-height:1.9;font-size:0.88rem;color:var(--text);font-weight:300;}
+.ai-response h3{font-size:1rem;font-weight:700;color:var(--accent);margin:1.25rem 0 0.5rem;display:flex;align-items:center;gap:0.5rem;}
+.ai-response h3:first-child{margin-top:0;}
+.ai-response p{margin-bottom:0.75rem;}
+.ai-response ul{padding-right:1.25rem;margin-bottom:0.75rem;}
+.ai-response li{margin-bottom:0.4rem;}
+.ai-response strong{color:var(--text);font-weight:600;}
+.ai-response .warn{color:var(--accent5);font-weight:600;}
+.ai-response .good{color:var(--accent3);font-weight:600;}
+.ai-ask-area{padding:1rem 1.5rem;border-top:1px solid var(--border2);background:rgba(0,0,0,0.2);}
+.ask-label{font-size:0.75rem;color:var(--text3);margin-bottom:0.5rem;}
+.ask-row{display:flex;gap:0.5rem;}
+.ask-row input{flex:1;padding:0.6rem 0.85rem;background:var(--surface);border:1px solid var(--border2);border-radius:8px;color:var(--text);font-family:inherit;font-size:0.83rem;direction:rtl;outline:none;transition:border-color 0.2s;}
+.ask-row input:focus{border-color:var(--accent);}
+.ask-row button{padding:0.6rem 1rem;border-radius:8px;border:none;background:var(--accent);color:white;font-family:inherit;font-size:0.83rem;cursor:pointer;transition:opacity 0.2s;}
+.ask-row button:hover{opacity:0.85;}
+.ask-row button:disabled{opacity:0.4;cursor:not-allowed;}
+
+.cat-disease{--cc:#c084fc;}
+.cat-virus{--cc:#fb7185;}
+.cat-bacteria{--cc:#38bdf8;}
+.cat-genetic{--cc:#34d399;}
+.cat-parasite{--cc:#fbbf24;}
+.cat-prion{--cc:#f97316;}
+.cat-plant{--cc:#a3e635;}
+.cat-fungus{--cc:#e879f9;}
+.entry-item-cat{background:color-mix(in srgb,var(--cc) 15%,transparent);color:var(--cc);border-color:color-mix(in srgb,var(--cc) 30%,transparent);}
+.meta-chip.type-cat{background:color-mix(in srgb,var(--cc) 12%,transparent);color:var(--cc);border-color:color-mix(in srgb,var(--cc) 30%,transparent);}
+
+.stats-row{display:flex;gap:1rem;flex-wrap:wrap;padding:0.75rem 1.5rem;border-bottom:1px solid var(--border);background:var(--surface);position:relative;z-index:10;}
+.stat-item{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text2);}
+.stat-item strong{color:var(--text);}
+.empty-msg{text-align:center;padding:2rem;color:var(--text3);font-size:0.85rem;}
+
+.suggestions-wrap{position:relative;}
+#suggestions{position:absolute;top:calc(100% + 4px);right:0;left:0;background:var(--card);border:1px solid var(--border2);border-radius:10px;z-index:50;max-height:260px;overflow-y:auto;box-shadow:0 8px 30px rgba(0,0,0,0.5);}
+.s-item{padding:0.55rem 0.85rem;cursor:pointer;transition:background 0.15s;border-bottom:1px solid var(--border);}
+.s-item:last-child{border-bottom:none;}
+.s-item:hover{background:rgba(79,142,247,0.1);}
+.s-item b{font-size:0.83rem;color:var(--text);}
+.s-item span{font-size:0.7rem;color:var(--text3);}
+.no-result-tip{padding:0.65rem 0.85rem;font-size:0.78rem;color:var(--accent4);}
+
+.voice-btn{position:absolute;left:2.5rem;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;color:var(--text3);transition:color 0.2s;padding:0;}
+.voice-btn:hover{color:var(--accent);}
+.voice-btn.listening{color:var(--accent5);animation:blink 0.6s infinite;}
+
+.wiki-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.82);z-index:500;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(6px);animation:fadeIn 0.2s ease;}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.wiki-modal-box{background:var(--card);border:1px solid var(--border2);border-radius:18px;width:min(480px,94vw);max-height:88vh;overflow-y:auto;padding:0;box-shadow:0 20px 60px rgba(0,0,0,0.7);}
+.wiki-modal-img{width:100%;height:180px;object-fit:cover;border-radius:18px 18px 0 0;}
+.wiki-modal-body{padding:1.5rem;}
+.wiki-modal-title{font-size:1.3rem;font-weight:800;color:var(--text);margin-bottom:0.5rem;}
+.wiki-modal-source{font-size:0.7rem;color:var(--text3);margin-bottom:0.75rem;}
+.wiki-modal-desc{font-size:0.86rem;color:var(--text2);line-height:1.8;font-weight:300;}
+.wiki-modal-loading{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:3rem;gap:0.75rem;}
+.wiki-modal-close{width:100%;margin-top:1.25rem;padding:0.7rem;border-radius:10px;background:var(--surface);border:1px solid var(--border2);color:var(--text2);font-family:inherit;font-size:0.85rem;cursor:pointer;transition:all 0.2s;}
+.wiki-modal-close:hover{border-color:var(--accent);color:var(--accent);}
+.wiki-read-more{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.75rem;font-size:0.78rem;color:var(--accent);text-decoration:none;}
+.wiki-read-more:hover{text-decoration:underline;}
+
+.notif{position:fixed;top:1.5rem;left:50%;transform:translateX(-50%);background:var(--accent3);color:white;padding:0.6rem 1.4rem;border-radius:999px;font-size:0.85rem;font-weight:600;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;}
+.notif.show{opacity:1;}
+
+.data-tools{display:flex;gap:0.5rem;margin-top:1rem;flex-wrap:wrap;}
+.data-btn{flex:1;padding:0.55rem 0.75rem;border-radius:8px;font-family:inherit;font-size:0.78rem;font-weight:600;cursor:pointer;border:1px solid;transition:all 0.2s;text-align:center;min-width:90px;}
+.data-btn.export{background:rgba(16,185,129,0.1);border-color:rgba(16,185,129,0.3);color:var(--accent3);}
+.data-btn.export:hover{background:rgba(16,185,129,0.2);}
+.data-btn.import{background:rgba(79,142,247,0.1);border-color:rgba(79,142,247,0.3);color:var(--accent);}
+.data-btn.import:hover{background:rgba(79,142,247,0.2);}
+.data-btn.reset{background:rgba(239,68,68,0.1);border-color:rgba(239,68,68,0.3);color:var(--accent5);}
+.data-btn.reset:hover{background:rgba(239,68,68,0.2);}
+
+@media(max-width:700px){
+.app{grid-template-columns:1fr;}
+.sidebar{max-height:50vh;position:relative;border-left:none;border-bottom:1px solid var(--border);}
+.chart-grid{grid-template-columns:1fr;}
+.top-stats{grid-template-columns:repeat(2,1fr);}
+.inline-form-grid{grid-template-columns:1fr;}
+.form-row{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="bg-grid"></div>
+<div class="bg-orb1"></div>
+<div class="bg-orb2"></div>
+<div class="notif" id="notif"></div>
+
+<button class="admin-trigger" onclick="openAdminModal()" title="پانێڵی ئەدمین">⚙️</button>
+
+<div class="modal-overlay" id="loginModal">
+  <div class="modal-box">
+    <h2>🔐 چوونەژوورەوەی ئەدمین</h2>
+    <div class="login-form">
+      <div class="form-group">
+        <label>ناوی بەکارهێنەر</label>
+        <input type="text" id="loginUser" placeholder="admin" value="admin">
+      </div>
+      <div class="form-group">
+        <label>تێپەڕوشم</label>
+        <input type="password" id="loginPass" placeholder="••••" onkeydown="if(event.key==='Enter')doLogin()">
+      </div>
+      <div class="btn-row">
+        <button class="btn-primary" onclick="doLogin()">چوونەژوورەوە</button>
+        <button class="btn-secondary" onclick="closeModal('loginModal')">داخستن</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="adminModal">
+  <div class="modal-box">
+    <h2>🛠️ پانێڵی بەڕێوەبردنی داتابەیس</h2>
+    <details style="margin-bottom:1rem;">
+      <summary style="cursor:pointer;font-size:0.9rem;font-weight:600;color:var(--accent);padding:0.6rem 0;list-style:none;display:flex;align-items:center;gap:0.5rem;">➕ زیادکردنی تازە</summary>
+      <div style="margin-top:1rem;">
+        <div class="form-row">
+          <div class="form-group"><label>ناوی کوردی *</label><input type="text" id="newKu" placeholder="کوردی بنووسە..."></div>
+          <div class="form-group"><label>ناوی ئینگلیزی *</label><input type="text" id="newEn" placeholder="English name..."></div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>جۆر</label>
+            <select id="newCat">
+              <option value="disease">🟣 نەخۆشی</option>
+              <option value="virus">🔴 ڤایرۆس</option>
+              <option value="bacteria">🔵 باکتریا</option>
+              <option value="genetic">🧬 جینیاتی</option>
+              <option value="parasite">🪱 پارازیت</option>
+              <option value="prion">⚡ پریۆن</option>
+              <option value="plant">🌿 ڕووەک/دار</option>
+              <option value="fungus">🧫 قاڵب</option>
+            </select>
+          </div>
+          <div class="form-group"><label>ئاستی دەگمەنی (١-٥)</label>
+            <select id="newRarity">
+              <option value="1">١ — باوی زۆر</option>
+              <option value="2">٢ — باو</option>
+              <option value="3">٣ — ناوەند</option>
+              <option value="4">٤ — دەگمەن</option>
+              <option value="5">٥ — زۆر دەگمەن</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group"><label>دۆزینەوە</label><input type="text" id="newDiscovered" placeholder="١٨٨٠ — ناوی زانستوان"></div>
+          <div class="form-group"><label>مەنشەی کەلتووری</label><input type="text" id="newOrigin" placeholder="جیهانی یان وڵاتێک"></div>
+        </div>
+        <div class="btn-row"><button class="btn-primary" onclick="addEntry()">➕ زیادکردن</button></div>
+      </div>
+    </details>
+    <div class="data-tools">
+      <button class="data-btn export" onclick="exportData()">📤 هەناردەکردن JSON</button>
+      <label class="data-btn import" style="cursor:pointer;">📥 هاوردەکردن JSON<input type="file" accept=".json" onchange="importData(event)" style="display:none"></label>
+      <button class="data-btn reset" onclick="resetToDefault()">🔄 گەڕانەوە بۆ بنەڕەت</button>
+    </div>
+    <div class="admin-list">
+      <div class="admin-list-header">
+        <h3>📋 داتابەیس — <span id="adminCount" style="color:var(--accent);font-weight:700;">0</span> تۆمار</h3>
+        <input type="text" class="admin-search" id="adminSearch" placeholder="گەڕان..." oninput="renderAdminList()">
+      </div>
+      <div id="adminList"></div>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="logo-row">
+    <div class="logo-icon">🧬</div>
+    <h1>Kurdish Biology</h1>
+  </div>
+  <p>ئینسایکلۆپیدیای نەخۆشییەکانی جیهان — نەخۆشی · ڤایرۆس · باکتریا · ڕووەک · داری دەرمانی · پارازیت</p>
+</header>
+
+<div class="stats-row" id="statsRow">
+  <div class="stat-item">🦠 نەخۆشی: <strong id="sc-disease">0</strong></div>
+  <div class="stat-item">🔴 ڤایرۆس: <strong id="sc-virus">0</strong></div>
+  <div class="stat-item">🔵 باکتریا: <strong id="sc-bacteria">0</strong></div>
+  <div class="stat-item">🌿 ڕووەک: <strong id="sc-plant">0</strong></div>
+  <div class="stat-item">🧫 قاڵب: <strong id="sc-fungus">0</strong></div>
+  <div class="stat-item">🧬 جینیاتی: <strong id="sc-genetic">0</strong></div>
+  <div class="stat-item">🪱 پارازیت: <strong id="sc-parasite">0</strong></div>
+  <div class="stat-item">⚡ پریۆن: <strong id="sc-prion">0</strong></div>
+</div>
+
+<div class="app">
+  <div class="sidebar">
+    <div class="search-area">
+      <div class="search-box suggestions-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" id="sideSearch" placeholder="گەڕان بە کوردی یان ئینگلیزی..." oninput="handleSearch()" onkeydown="handleSearchKey(event)" autocomplete="off">
+        <button class="voice-btn" id="voiceBtn" onclick="startVoice()" title="گەڕانی دەنگ">🎤</button>
+        <div id="suggestions"></div>
+      </div>
+    </div>
+    <div class="cat-tabs" id="catTabs">
+      <button class="cat-tab active" onclick="setCat('all',this)">هەموو</button>
+      <button class="cat-tab" onclick="setCat('disease',this)">🟣 نەخۆشی</button>
+      <button class="cat-tab" onclick="setCat('virus',this)">🔴 ڤایرۆس</button>
+      <button class="cat-tab" onclick="setCat('bacteria',this)">🔵 باکتریا</button>
+      <button class="cat-tab" onclick="setCat('plant',this)">🌿 ڕووەک</button>
+      <button class="cat-tab" onclick="setCat('fungus',this)">🧫 قاڵب</button>
+      <button class="cat-tab" onclick="setCat('genetic',this)">🧬 جینیاتی</button>
+      <button class="cat-tab" onclick="setCat('parasite',this)">🪱 پارازیت</button>
+      <button class="cat-tab" onclick="setCat('prion',this)">⚡ پریۆن</button>
+    </div>
+    <div class="list-count">نیشاندانی <span id="listCount">0</span> نتیجە</div>
+    <div class="entry-list" id="entryList"></div>
+  </div>
+
+  <div class="main-panel" id="mainPanel">
+    <div class="welcome" id="welcomeScreen">
+      <div class="welcome-icon">🔬</div>
+      <h2>بەخێربێیت بۆ ئینسایکلۆپیدیای نەخۆشییەکان</h2>
+      <p>لیستی ماڵەوەیەکدا هەموو نەخۆشی، ڤایرۆس، باکتریا، ڕووەک و داری دەرمانی دوزراونەتەوە هەیە. هەر یەکێکیان هەڵبژێرە تا زانیاری تەواوی AI وەربگریت.</p>
+      <div class="quick-cats">
+        <button class="quick-cat" onclick="setCatAndScroll('disease')">🟣 نەخۆشییەکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('virus')">🔴 ڤایرۆسەکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('bacteria')">🔵 باکتریاکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('plant')">🌿 ڕووەکەکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('fungus')">🧫 قاڵبەکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('genetic')">🧬 نەخۆشی جینیاتی</button>
+        <button class="quick-cat" onclick="setCatAndScroll('parasite')">🪱 پارازیتەکان</button>
+        <button class="quick-cat" onclick="setCatAndScroll('prion')">⚡ پریۆنەکان</button>
+        <button class="quick-cat" onclick="showDashboard()">📊 داشبۆردی ئامار</button>
+      </div>
+      <div class="ai-search-box">
+        <h3>🤖 گەڕانی AI — هەر نەخۆشییەک بنووسە</h3>
+        <div class="ai-input-row">
+          <input type="text" id="aiGlobalSearch" placeholder="بنووسە: ئیبۆلا، COVID-19، مالاریا..." onkeydown="if(event.key==='Enter')aiGlobalLook()">
+          <button class="ai-btn" onclick="aiGlobalLook()">🔍 گەڕان</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="dashboardPanel" style="display:none;">
+      <div class="stats-dashboard">
+        <h3>📊 داشبۆردی ئامارەکانی داتابەیس</h3>
+        <div class="top-stats" id="topStats"></div>
+        <div class="chart-grid" style="margin-top:1.25rem;">
+          <div class="chart-box"><h4>📈 دابەشبوون بەپێی جۆر</h4><div class="bar-chart" id="barChart"></div></div>
+          <div class="chart-box"><h4>🥧 پایچارتی جۆرەکان</h4><div class="pie-wrapper"><canvas id="pieCanvas" width="120" height="120"></canvas><div class="pie-legend" id="pieLegend"></div></div></div>
+          <div class="chart-box"><h4>⭐ دابەشبوونی دەگمەنی</h4><div class="bar-chart" id="rarityChart"></div></div>
+          <div class="chart-box"><h4>🏆 زۆرترین مەنشە</h4><div class="bar-chart" id="originChart"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="detail-panel" id="detailPanel">
+      <div class="detail-header" id="detailHeader">
+        <div class="detail-num" id="dNum"></div>
+        <div class="detail-title" id="dTitle"></div>
+        <div class="detail-en" id="dEn"></div>
+        <div class="detail-meta" id="dMeta"></div>
+      </div>
+      <div class="ai-content-area">
+        <div class="ai-content-tabs">
+          <button class="ai-content-tab active" onclick="showTab('overview',this)">📋 گشتی</button>
+          <button class="ai-content-tab" onclick="showTab('causes',this)">🔬 هۆکارەکان</button>
+          <button class="ai-content-tab" onclick="showTab('symptoms',this)">🌡️ نیشانەکان</button>
+          <button class="ai-content-tab" onclick="showTab('treatment',this)">💊 چارەسەر</button>
+          <button class="ai-content-tab" onclick="showTab('plants',this)">🌿 ڕووەک و دار</button>
+          <button class="ai-content-tab" onclick="showTab('discovery',this)">🏆 دۆزینەوە</button>
+          <button class="ai-content-tab" onclick="showTab('stats',this)">📊 ئامار</button>
+        </div>
+        <div class="ai-content-body" id="aiContentBody">
+          <div class="loading-state"><div class="dna-spinner"></div><div class="loading-text">AI زانیاری ئامادە دەکات...</div></div>
+        </div>
+        <div class="ai-ask-area">
+          <div class="ask-label">🤖 پرسیاری تری هەیتە لەبارەی ئەم نەخۆشییەوە؟</div>
+          <div class="ask-row">
+            <input type="text" id="askInput" placeholder="پرسیارت بنووسە..." onkeydown="if(event.key==='Enter')askQuestion()">
+            <button onclick="askQuestion()" id="askBtn">پرسیار</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="aiSearchResult" style="display:none;">
+      <div class="ai-content-area">
+        <div class="ai-content-tabs">
+          <button class="ai-content-tab active">🔍 ئەنجامی گەڕان</button>
+        </div>
+        <div class="ai-content-body" id="aiSearchBody"></div>
+        <div class="ai-ask-area">
+          <div class="ask-label">🤖 زیاتر بپرسە</div>
+          <div class="ask-row">
+            <input type="text" id="askInput2" placeholder="پرسیارت بنووسە..." onkeydown="if(event.key==='Enter')askQuestion2()">
+            <button onclick="askQuestion2()" id="askBtn2">پرسیار</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const cacheDetails = {};
+
+async function translateToKurdish(text){
+  if(!text) return '';
+  try{
+    const res=await fetch("https://api.mymemory.translated.net/get?q="+encodeURIComponent(text.slice(0,400))+"&langpair=en|ku");
+    const data=await res.json();
+    return data.responseData?.translatedText || text;
+  }catch{return text;}
+}
+
+async function getDiseaseDetails(enName){
+  const overlay=document.createElement('div');
+  overlay.className='wiki-modal-overlay';
+  overlay.id='wikiOverlay';
+  overlay.innerHTML=`<div class="wiki-modal-box"><div class="wiki-modal-loading"><div class="dna-spinner"></div><div class="loading-text">Wikipedia لە بیر دەکاتەوە...</div></div></div>`;
+  overlay.addEventListener('click',e=>{if(e.target===overlay) overlay.remove();});
+  document.body.appendChild(overlay);
+  if(cacheDetails[enName]){renderWikiModal(overlay,cacheDetails[enName]);return;}
+  try{
+    const res=await fetch("https://en.wikipedia.org/api/rest_v1/page/summary/"+encodeURIComponent(enName));
+    const data=await res.json();
+    const rawDesc=data.extract||'No description available.';
+    const translated=await translateToKurdish(rawDesc);
+    const fd={title:data.title||enName,desc:translated,img:data.thumbnail?.source||'',wikiUrl:data.content_urls?.desktop?.page||`https://en.wikipedia.org/wiki/${encodeURIComponent(enName)}`};
+    cacheDetails[enName]=fd;
+    renderWikiModal(overlay,fd);
+  }catch(e){
+    overlay.querySelector('.wiki-modal-box').innerHTML=`<div class="wiki-modal-body"><div class="wiki-modal-title">⚠️ هەڵە</div><div class="wiki-modal-desc">${e.message}</div><button class="wiki-modal-close" onclick="document.getElementById('wikiOverlay').remove()">داخستن</button></div>`;
+  }
+}
+
+function renderWikiModal(overlay,d){
+  overlay.querySelector('.wiki-modal-box').innerHTML=`
+    ${d.img?`<img class="wiki-modal-img" src="${d.img}" alt="${d.title}">`:''}
+    <div class="wiki-modal-body">
+      <div class="wiki-modal-title">${d.title}</div>
+      <div class="wiki-modal-source">📖 سەرچاوە: Wikipedia</div>
+      <div class="wiki-modal-desc">${d.desc}</div>
+      <a class="wiki-read-more" href="${d.wikiUrl}" target="_blank" rel="noopener">🔗 زیاتر بخوێنەوە ↗</a>
+      <button class="wiki-modal-close" onclick="document.getElementById('wikiOverlay').remove()">✕ داخستن</button>
+    </div>`;
+}
+
+const defaultEntries = [
+  {id:1,ku:"شێرپەنجەی ئیبۆلا",en:"Ebola Virus Disease",cat:"virus",discovered:"1976 — دکتۆر پیتر پیۆت (بێلجیکا)",rarity:5,origin:"کۆنگۆی دیموکراتیک"},
+  {id:2,ku:"کۆڤید-١٩",en:"COVID-19 (SARS-CoV-2)",cat:"virus",discovered:"2019 — زانستوانانی چین / WHO",rarity:1,origin:"ووهان، چین"},
+  {id:3,ku:"مالاریا",en:"Malaria (Plasmodium)",cat:"parasite",discovered:"١٨٨٠ — چارلز لاڤران",rarity:1,origin:"ئەفریقا"},
+  {id:4,ku:"شێرپەنجەی پشک",en:"Lung Cancer",cat:"disease",discovered:"١٩٥٠ — ریچارد دۆل",rarity:1,origin:"جیهانی"},
+  {id:5,ku:"شوگر — نەخۆشی شەکری جۆری دووەم",en:"Type 2 Diabetes Mellitus",cat:"disease",discovered:"٢٠٠٠ پێش زایین",rarity:1,origin:"جیهانی"},
+  {id:6,ku:"HIV — ئەیدز",en:"HIV/AIDS",cat:"virus",discovered:"١٩٨١ — CDC ئامریکا",rarity:1,origin:"ئەفریقای ناوەند"},
+  {id:7,ku:"سل — توبێرکولۆز",en:"Tuberculosis (TB)",cat:"bacteria",discovered:"١٨٨٢ — رۆبێرت کۆخ",rarity:1,origin:"جیهانی"},
+  {id:8,ku:"کۆلیرا",en:"Cholera (Vibrio cholerae)",cat:"bacteria",discovered:"١٨٥٤ — جۆن سنۆ",rarity:2,origin:"ئاسیای باشوور"},
+  {id:9,ku:"تاووندا سووری",en:"Dengue Fever",cat:"virus",discovered:"١٩٤٣ — نائوتۆ شیبا",rarity:2,origin:"ئەفریقا/ئاسیا"},
+  {id:10,ku:"هەپاتیتی B",en:"Hepatitis B (HBV)",cat:"virus",discovered:"١٩٦٦ — بارووچ بلومبێرگ",rarity:1,origin:"جیهانی"},
+  {id:11,ku:"هەپاتیتی C",en:"Hepatitis C (HCV)",cat:"virus",discovered:"١٩٨٩ — مایکل هۆتۆن",rarity:1,origin:"جیهانی"},
+  {id:12,ku:"فیبرودیسپلازیا ئۆسیفیکانس",en:"Fibrodysplasia Ossificans Progressiva",cat:"genetic",discovered:"١٦٩٢ — یان راڤ",rarity:5,origin:"جیهانی"},
+  {id:13,ku:"پرۆجیریا",en:"Hutchinson-Gilford Progeria Syndrome",cat:"genetic",discovered:"١٨٨٦ — جۆناتان هاچینسۆن",rarity:5,origin:"جیهانی"},
+  {id:14,ku:"ئینفلوئەنزا — گڕیپ",en:"Influenza (Flu)",cat:"virus",discovered:"١٩٣٣ — ڤیلسۆن سمیت",rarity:1,origin:"جیهانی"},
+  {id:15,ku:"نەخۆشی پارکینسۆن",en:"Parkinson's Disease",cat:"disease",discovered:"١٨١٧ — جیمز پارکینسۆن",rarity:2,origin:"جیهانی"},
+  {id:16,ku:"نەخۆشی ئەلزهایمەر",en:"Alzheimer's Disease",cat:"disease",discovered:"١٩٠٦ — ئالۆیس ئەلزهایمەر",rarity:1,origin:"جیهانی"},
+  {id:17,ku:"شێرپەنجەی خوێن — لیوکیمیا",en:"Leukemia",cat:"disease",discovered:"١٨٤٧ — ڤیرچۆ",rarity:2,origin:"جیهانی"},
+  {id:18,ku:"نەخۆشی مارپووری",en:"Marburg Virus Disease",cat:"virus",discovered:"١٩٦٧ — مارپووری ئەڵمانیا",rarity:5,origin:"ئوگەندا"},
+  {id:19,ku:"نەخۆشی ستیف-پێرسۆن",en:"Stiff Person Syndrome",cat:"disease",discovered:"١٩٥٦ — مۆرش و ووتلتز",rarity:5,origin:"جیهانی"},
+  {id:20,ku:"نەخۆشی فاتاڵ فامیلیاڵ ئینسۆمنیا",en:"Fatal Familial Insomnia",cat:"prion",discovered:"١٩٨٦ — ئیتالیا",rarity:5,origin:"ئیتالیا"},
+  {id:21,ku:"زووکامی سارد",en:"Common Cold (Rhinovirus)",cat:"virus",discovered:"١٩٥٦ — وینستن پرایس",rarity:1,origin:"جیهانی"},
+  {id:22,ku:"نەخۆشی کروھن",en:"Crohn's Disease",cat:"disease",discovered:"١٩٣٢ — بورییل کرۆن",rarity:2,origin:"جیهانی"},
+  {id:23,ku:"نەخۆشی مەلتیپڵ سکلێروزیس",en:"Multiple Sclerosis (MS)",cat:"disease",discovered:"١٨٦٨ — جان-مارتین شارکۆ",rarity:2,origin:"جیهانی"},
+  {id:24,ku:"نەخۆشی هونتینگتۆن",en:"Huntington's Disease",cat:"genetic",discovered:"١٨٧٢ — جۆرج هونتینگتۆن",rarity:3,origin:"جیهانی"},
+  {id:25,ku:"تاووند زەرد",en:"Yellow Fever",cat:"virus",discovered:"١٩٠١ — والتر رید",rarity:3,origin:"ئەفریقا"},
+  {id:26,ku:"کووروو",en:"Kuru",cat:"prion",discovered:"١٩٥٥ — کارلتۆن گاژدوسێک",rarity:5,origin:"پاپووا گینیای نوێ"},
+  {id:27,ku:"ئەپیلەپسی — کزبوون",en:"Epilepsy",cat:"disease",discovered:"قەدیمی — هیپۆکرات",rarity:1,origin:"جیهانی"},
+  {id:28,ku:"ئاستماکان",en:"Asthma",cat:"disease",discovered:"قەدیمی",rarity:1,origin:"جیهانی"},
+  {id:29,ku:"تایفۆید",en:"Typhoid Fever (S. typhi)",cat:"bacteria",discovered:"١٨٨٠ — کارل ئیبێرت",rarity:2,origin:"ئاسیای باشوور"},
+  {id:30,ku:"پەردەی قووت — پۆلیۆ",en:"Poliomyelitis (Polio)",cat:"virus",discovered:"١٨٤٠ — ئاکوب هاینیه",rarity:3,origin:"جیهانی"},
+  {id:31,ku:"تاووندی دماغ — راابیز",en:"Rabies",cat:"virus",discovered:"١٩٠٣ — پۆل ریملنجێر",rarity:3,origin:"جیهانی"},
+  {id:32,ku:"نەخۆشی ڤاریانت CJD",en:"Variant Creutzfeldt-Jakob Disease",cat:"prion",discovered:"١٩٩٦ — بریتانیا",rarity:5,origin:"بریتانیا"},
+  {id:33,ku:"نەخۆشی لوپوس",en:"Systemic Lupus Erythematosus",cat:"disease",discovered:"١٨٥١ — پیئێر کازناڤ",rarity:3,origin:"جیهانی"},
+  {id:34,ku:"ALS — نەخۆشی لو گێریگ",en:"Amyotrophic Lateral Sclerosis",cat:"disease",discovered:"١٨٦٩ — جان مارتین شارکۆ",rarity:3,origin:"جیهانی"},
+  {id:35,ku:"فیبروزی کیستیک",en:"Cystic Fibrosis",cat:"genetic",discovered:"١٩٣٨ — دوروتی ئاندرسن",rarity:3,origin:"جیهانی"},
+  {id:36,ku:"نەخۆشی سیکڵ سێل",en:"Sickle Cell Disease",cat:"genetic",discovered:"١٩١٠ — جیمز هێریک",rarity:2,origin:"ئەفریقا"},
+  {id:37,ku:"تالاسیمیا",en:"Thalassemia",cat:"genetic",discovered:"١٩٢٥ — تۆماس کۆلێی",rarity:3,origin:"دەریای ناوەڕاست"},
+  {id:38,ku:"هیموفیلیا",en:"Hemophilia",cat:"genetic",discovered:"١٨٠٣ — جۆن کۆن راد ۆتۆ",rarity:3,origin:"جیهانی"},
+  {id:39,ku:"شیزۆفرینیا",en:"Schizophrenia",cat:"disease",discovered:"١٩١١ — یوگین بلولێر",rarity:2,origin:"جیهانی"},
+  {id:40,ku:"ئیپۆلار — دوو پۆل",en:"Bipolar Disorder",cat:"disease",discovered:"١٨٥٤ — فالرێ و باللارژێ",rarity:2,origin:"جیهانی"},
+  {id:41,ku:"ڤایرۆسی نیپا",en:"Nipah Virus",cat:"virus",discovered:"١٩٩٩ — مالیزیا",rarity:5,origin:"مالیزیا"},
+  {id:42,ku:"ڤایرۆسی زیکا",en:"Zika Virus",cat:"virus",discovered:"١٩٤٧ — ئوگەندا",rarity:2,origin:"ئوگەندا"},
+  {id:43,ku:"ڤایرۆسی لاسا",en:"Lassa Fever Virus",cat:"virus",discovered:"١٩٦٩ — نیجیریا",rarity:4,origin:"ئەفریقای باکوور"},
+  {id:44,ku:"ڤایرۆسی MERS-CoV",en:"MERS Coronavirus",cat:"virus",discovered:"٢٠١٢ — عەرەبستانی سعوودی",rarity:4,origin:"عەرەبستانی سعوودی"},
+  {id:45,ku:"باکتریای لیگیۆنێلا",en:"Legionella pneumophila",cat:"bacteria",discovered:"١٩٧٦ — ئامریکا",rarity:3,origin:"ئامریکا"},
+  {id:46,ku:"نەخۆشی لایم",en:"Borrelia burgdorferi (Lyme Disease)",cat:"bacteria",discovered:"١٩٨٢ — ویلی بورگدۆرفەر",rarity:3,origin:"ئامریکای باکووری"},
+  {id:47,ku:"تاووندی زانا — لیشمانیاز",en:"Leishmaniasis",cat:"parasite",discovered:"١٩٠٣ — ویلیام لیشمان",rarity:3,origin:"ئەفریقا/ئاسیا"},
+  {id:48,ku:"نەخۆشی شاگاس",en:"Chagas Disease (T. cruzi)",cat:"parasite",discovered:"١٩٠٩ — کارلۆس شاگاس",rarity:3,origin:"ئامریکای ناوەند"},
+  {id:49,ku:"قاڵبی کاندیدا ئاوریس",en:"Candida auris",cat:"fungus",discovered:"٢٠٠٩ — ژاپۆن",rarity:4,origin:"ژاپۆن"},
+  {id:50,ku:"قاڵبی ئاسپێرجیلووس",en:"Aspergillus fumigatus",cat:"fungus",discovered:"١٨٦٣ — فریسینیوس",rarity:2,origin:"جیهانی"},
+  {id:51,ku:"ڕووەکی مادەی ئۆپیۆم — خاشخاش",en:"Papaver somniferum (Opium Poppy)",cat:"plant",discovered:"قەدیمی — سومەری",rarity:1,origin:"ئاسیای ناوەند"},
+  {id:52,ku:"ڕووەکی ئارتیمیزیا — داری مالاریا",en:"Artemisia annua (Sweet Wormwood)",cat:"plant",discovered:"١٩٧٢ — تو یووووه",rarity:2,origin:"چین"},
+  {id:53,ku:"ڕووەکی کینا — داری مالاریا",en:"Cinchona (Quinine Plant)",cat:"plant",discovered:"١٦٣٨ — بیرۆی پیرۆ",rarity:2,origin:"پیرۆ"},
+  {id:54,ku:"ڕووەکی دیجیتالیس — داری دڵ",en:"Digitalis purpurea (Foxglove)",cat:"plant",discovered:"١٧٨٥ — ویلیام ویدێرینگ",rarity:2,origin:"ئەوروپا"},
+  {id:55,ku:"ڕووەکی تاکسووس — داری شێرپەنجە",en:"Taxus brevifolia (Pacific Yew)",cat:"plant",discovered:"١٩٦٧ — ئامریکا",rarity:2,origin:"ئامریکای باکووری"},
+  {id:56,ku:"ڕووەکی توومێریک",en:"Curcuma longa (Turmeric)",cat:"plant",discovered:"قەدیمی",rarity:1,origin:"ئاسیا"},
+  {id:57,ku:"نەخۆشی پۆمپێ",en:"Pompe Disease",cat:"genetic",discovered:"١٩٣٢ — جۆهانێس پۆمپێ",rarity:4,origin:"جیهانی"},
+  {id:58,ku:"نەخۆشی ئوتیسم",en:"Autism Spectrum Disorder",cat:"disease",discovered:"١٩٤٣ — لیۆ کانێر",rarity:2,origin:"جیهانی"},
+  {id:59,ku:"نەخۆشی ناێگلێریا",en:"Naegleria fowleri Infection",cat:"parasite",discovered:"١٩٦٥ — ئوسترالیا",rarity:5,origin:"ئوسترالیا"},
+  {id:60,ku:"ئیرویسینیا — تاووندی ئالتوون",en:"Yersinia pestis (Plague)",cat:"bacteria",discovered:"١٨٩٤ — ئالێکساندر یێرسین",rarity:3,origin:"ئاسیا"},
+  {id:61,ku:"سایتۆمیگالۆڤایرۆس CMV",en:"Cytomegalovirus (CMV)",cat:"virus",discovered:"١٩٥٦ — ماگارت گلاڤن",rarity:2,origin:"جیهانی"},
+  {id:62,ku:"نەخۆشی فابری",en:"Fabry Disease",cat:"genetic",discovered:"١٨٩٨ — جۆن فابری",rarity:4,origin:"جیهانی"},
+  {id:63,ku:"تریپانۆزۆما — خەوی ئەفریقی",en:"African Sleeping Sickness",cat:"parasite",discovered:"١٩٠٢ — دیڤید بروس",rarity:3,origin:"ئەفریقا"},
+  {id:64,ku:"قاڵبی هیستۆپلاسما",en:"Histoplasma capsulatum",cat:"fungus",discovered:"١٩٠٦ — ساموئیل دارکی",rarity:3,origin:"ئامریکای باکووری"},
+  {id:65,ku:"شێرپەنجەی سینە",en:"Breast Cancer",cat:"disease",discovered:"قەدیمی",rarity:1,origin:"جیهانی"},
+  {id:66,ku:"مینینجیت",en:"Meningococcal Meningitis",cat:"bacteria",discovered:"١٨٠٥ — گاسپار ڤیسیا",rarity:2,origin:"جیهانی"},
+  {id:67,ku:"نەخۆشی ریتت",en:"Rett Syndrome",cat:"genetic",discovered:"١٩٦٦ — ئاندرێاس ریتت",rarity:4,origin:"جیهانی"},
+  {id:68,ku:"ڤایرۆسی هێندرا",en:"Hendra Virus",cat:"virus",discovered:"١٩٩٤ — ئوسترالیا",rarity:5,origin:"ئوسترالیا"},
+  {id:69,ku:"نەخۆشی سارکۆیدۆز",en:"Sarcoidosis",cat:"disease",discovered:"١٨٩٩ — سیزار بوئێک",rarity:3,origin:"جیهانی"},
+  {id:70,ku:"نەخۆشی نارکۆلێپسی",en:"Narcolepsy",cat:"disease",discovered:"١٨٨٠ — ژان باپتیست گۆلینۆ",rarity:3,origin:"جیهانی"},
+  {id:71,ku:"قاڵبی کریپتۆکۆکووس",en:"Cryptococcus neoformans",cat:"fungus",discovered:"١٨٩٤ — سانفیلیپۆ",rarity:3,origin:"جیهانی"},
+  {id:72,ku:"قاڵبی موکۆر",en:"Mucor circinelloides",cat:"fungus",discovered:"١٨٩٠",rarity:4,origin:"جیهانی"},
+  {id:73,ku:"ڕووەکی ڤینکا — داری لیوکیمیا",en:"Catharanthus roseus (Periwinkle)",cat:"plant",discovered:"١٩٥٨ — کانادا",rarity:2,origin:"ماداگاسکار"},
+  {id:74,ku:"ڕووەکی نیم",en:"Azadirachta indica (Neem)",cat:"plant",discovered:"قەدیمی — ئیندیا",rarity:1,origin:"ئیندیا"},
+  {id:75,ku:"ڕووەکی ئیکیناسیا",en:"Echinacea purpurea",cat:"plant",discovered:"قەدیمی — ئامریکا",rarity:1,origin:"ئامریکای باکووری"},
+  {id:76,ku:"دیفتری",en:"Diphtheria (C. diphtheriae)",cat:"bacteria",discovered:"١٨٨٣ — تیۆدۆر کلێبس",rarity:3,origin:"ئەوروپا"},
+  {id:77,ku:"باکتریای لیستیریا",en:"Listeria monocytogenes",cat:"bacteria",discovered:"١٩٢٦ — ئی جی موری",rarity:3,origin:"جیهانی"},
+  {id:78,ku:"باکتریای بروسێلا",en:"Brucella melitensis",cat:"bacteria",discovered:"١٨٨٧ — دیڤید بروس",rarity:3,origin:"دەریای ناوەڕاست"},
+  {id:79,ku:"نەخۆشی فریدریش ئاتاکسیا",en:"Friedreich's Ataxia",cat:"genetic",discovered:"١٨٦٣ — نیکۆلاس فریدریش",rarity:4,origin:"جیهانی"},
+  {id:80,ku:"نەخۆشی گۆشەی",en:"Gaucher Disease",cat:"genetic",discovered:"١٨٨٢ — فیلیپ گۆشەی",rarity:4,origin:"جیهانی"},
+];
+
+const catMeta = {
+  disease:{emoji:'🟣',label:'نەخۆشی',color:'#c084fc'},
+  virus:{emoji:'🔴',label:'ڤایرۆس',color:'#fb7185'},
+  bacteria:{emoji:'🔵',label:'باکتریا',color:'#38bdf8'},
+  genetic:{emoji:'🧬',label:'جینیاتی',color:'#34d399'},
+  parasite:{emoji:'🪱',label:'پارازیت',color:'#fbbf24'},
+  prion:{emoji:'⚡',label:'پریۆن',color:'#f97316'},
+  plant:{emoji:'🌿',label:'ڕووەک/دار',color:'#a3e635'},
+  fungus:{emoji:'🧫',label:'قاڵب',color:'#e879f9'},
+};
+
+let entries = JSON.parse(localStorage.getItem('encyclopediaDB') || 'null') || defaultEntries;
+let currentCat = 'all';
+let currentEntry = null;
+let currentTab = 'overview';
+let tabCache = {};
+let searchLastEntry = null;
+let isLoggedIn = false;
+
+function saveDB(){localStorage.setItem('encyclopediaDB',JSON.stringify(entries));}
+
+function init(){
+  Object.keys(catMeta).forEach(c=>{
+    const el=document.getElementById('sc-'+c);
+    if(el) el.textContent=entries.filter(e=>e.cat===c).length;
+  });
+  sideFilter();
+}
+
+function sideFilter(){
+  const q=document.getElementById('sideSearch').value.toLowerCase();
+  let filtered=entries;
+  if(currentCat!=='all') filtered=filtered.filter(e=>e.cat===currentCat);
+  if(q) filtered=filtered.filter(e=>e.ku.toLowerCase().includes(q)||e.en.toLowerCase().includes(q));
+  document.getElementById('listCount').textContent=filtered.length;
+  const html=filtered.map(e=>{
+    const cm=catMeta[e.cat];
+    return `<div class="entry-item cat-${e.cat} ${currentEntry&&currentEntry.id===e.id?'active':''}" onclick="selectEntry(${e.id})">
+      <div class="entry-item-name">${e.ku}</div>
+      <div class="entry-item-en">${e.en}</div>
+      <div class="entry-item-cat">${cm.emoji} ${cm.label}</div>
+    </div>`;
+  }).join('');
+  document.getElementById('entryList').innerHTML=html||'<div class="empty-msg">هیچ ئەنجامێک نەدۆزرایەوە</div>';
+}
+
+function levenshtein(a,b){
+  const m=[];
+  for(let i=0;i<=b.length;i++) m[i]=[i];
+  for(let j=0;j<=a.length;j++) m[0][j]=j;
+  for(let i=1;i<=b.length;i++) for(let j=1;j<=a.length;j++)
+    m[i][j]=b[i-1]===a[j-1]?m[i-1][j-1]:Math.min(m[i-1][j-1]+1,m[i][j-1]+1,m[i-1][j]+1);
+  return m[b.length][a.length];
+}
+
+function smartSearch(q){
+  return entries.map(e=>({item:e,score:Math.min(levenshtein(q,e.en.toLowerCase()),levenshtein(q,e.ku.toLowerCase()))}))
+    .sort((a,b)=>a.score-b.score).map(r=>r.item);
+}
+
+let debounceTimer;
+function handleSearch(){
+  clearTimeout(debounceTimer);
+  debounceTimer=setTimeout(()=>{
+    const q=document.getElementById('sideSearch').value.toLowerCase().trim();
+    if(!q){document.getElementById('suggestions').innerHTML='';sideFilter();return;}
+    let results=entries.filter(e=>e.ku.toLowerCase().includes(q)||e.en.toLowerCase().includes(q));
+    if(results.length===0) results=smartSearch(q);
+    showSuggestions(results.slice(0,8),q,results.length===0);
+    sideFilter();
+  },300);
+}
+
+function handleSearchKey(e){if(e.key==='Escape') document.getElementById('suggestions').innerHTML='';}
+
+function showSuggestions(list,q,isFuzzy){
+  const box=document.getElementById('suggestions');
+  if(!list.length){box.innerHTML='';return;}
+  let html='';
+  if(isFuzzy) html+=`<div class="no-result-tip">💡 مەبەستت ئەمانەیە؟</div>`;
+  html+=list.map(e=>{
+    const cm=catMeta[e.cat];
+    return `<div class="s-item" onclick="selectEntryFromSuggestion(${e.id})">
+      <b>${e.ku}</b> &nbsp;<span style="color:${cm.color}">${cm.emoji}</span><br>
+      <span>${e.en}</span>
+    </div>`;
+  }).join('');
+  box.innerHTML=html;
+}
+
+function selectEntryFromSuggestion(id){
+  document.getElementById('suggestions').innerHTML='';
+  selectEntry(id);
+}
+
+document.addEventListener('click',e=>{
+  if(!e.target.closest('.suggestions-wrap')) document.getElementById('suggestions').innerHTML='';
+});
+
+function setCat(cat,btn){
+  currentCat=cat;
+  document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  sideFilter();
+}
+
+function setCatAndScroll(cat){
+  currentCat=cat;
+  document.querySelectorAll('.cat-tab').forEach((b,i)=>{
+    const cats=['all','disease','virus','bacteria','plant','fungus','genetic','parasite','prion'];
+    if(cats[i]===cat) b.classList.add('active'); else b.classList.remove('active');
+  });
+  sideFilter();
+  document.querySelector('.sidebar').scrollIntoView({behavior:'smooth'});
+}
+
+function startVoice(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){showNotif('⚠️ براوزەرەکەت دەنگ پشتگیری ناکات','#f59e0b');return;}
+  const recog=new SR();
+  recog.lang='en-US';
+  const btn=document.getElementById('voiceBtn');
+  btn.classList.add('listening');btn.textContent='🔴';
+  recog.onresult=e=>{
+    const text=e.results[0][0].transcript;
+    document.getElementById('sideSearch').value=text;
+    handleSearch();
+    showNotif(`🎤 "${text}" گوێیت لێگرا`,'#10b981');
+  };
+  recog.onerror=()=>showNotif('⚠️ دەنگ نەگەیشت','#f59e0b');
+  recog.onend=()=>{btn.classList.remove('listening');btn.textContent='🎤';};
+  recog.start();
+}
+
+function showDashboard(){
+  document.getElementById('welcomeScreen').style.display='none';
+  document.getElementById('detailPanel').style.display='none';
+  document.getElementById('aiSearchResult').style.display='none';
+  document.getElementById('dashboardPanel').style.display='block';
+  renderDashboard();
+}
+
+function renderDashboard(){
+  const total=entries.length;
+  const cats=Object.keys(catMeta);
+  document.getElementById('topStats').innerHTML=`
+    <div class="top-stat"><div class="top-stat-num">${total}</div><div class="top-stat-label">کۆی داتابەیس</div></div>
+    <div class="top-stat"><div class="top-stat-num">${entries.filter(e=>e.rarity>=5).length}</div><div class="top-stat-label">زۆر دەگمەن</div></div>
+    <div class="top-stat"><div class="top-stat-num">${cats.length}</div><div class="top-stat-label">جۆری جیاواز</div></div>
+    <div class="top-stat"><div class="top-stat-num">${entries.filter(e=>e.rarity===1).length}</div><div class="top-stat-label">باوترین</div></div>
+  `;
+  const maxCount=Math.max(...cats.map(c=>entries.filter(e=>e.cat===c).length));
+  document.getElementById('barChart').innerHTML=cats.map(c=>{
+    const cm=catMeta[c];const count=entries.filter(e=>e.cat===c).length;
+    return `<div class="bar-row"><div class="bar-label">${cm.emoji} ${cm.label}</div><div class="bar-track"><div class="bar-fill" style="width:${(count/maxCount)*100}%;background:${cm.color};"></div></div><div class="bar-count">${count}</div></div>`;
+  }).join('');
+  const canvas=document.getElementById('pieCanvas');
+  const ctx=canvas.getContext('2d');
+  ctx.clearRect(0,0,120,120);
+  let startAngle=0;
+  cats.forEach(c=>{
+    const cm=catMeta[c];const count=entries.filter(e=>e.cat===c).length;
+    const slice=(count/total)*Math.PI*2;
+    ctx.beginPath();ctx.moveTo(60,60);ctx.arc(60,60,55,startAngle,startAngle+slice);
+    ctx.fillStyle=cm.color;ctx.fill();startAngle+=slice;
+  });
+  document.getElementById('pieLegend').innerHTML=cats.map(c=>{
+    const cm=catMeta[c];return `<div class="pie-item"><div class="pie-dot" style="background:${cm.color}"></div>${cm.label}: ${entries.filter(e=>e.cat===c).length}</div>`;
+  }).join('');
+  const maxR=Math.max(...[1,2,3,4,5].map(r=>entries.filter(e=>e.rarity===r).length));
+  document.getElementById('rarityChart').innerHTML=[1,2,3,4,5].map((r,i)=>{
+    const count=entries.filter(e=>e.rarity===r).length;
+    const col=['#34d399','#60a5fa','#f59e0b','#fb923c','#ef4444'][i];
+    return `<div class="bar-row"><div class="bar-label">⭐ ${['١','٢','٣','٤','٥'][i]}</div><div class="bar-track"><div class="bar-fill" style="width:${maxR>0?(count/maxR)*100:0}%;background:${col};"></div></div><div class="bar-count">${count}</div></div>`;
+  }).join('');
+  const originCount={};
+  entries.forEach(e=>{const o=e.origin||'نامەعلووم';originCount[o]=(originCount[o]||0)+1;});
+  const top5=Object.entries(originCount).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const maxO=top5[0]?top5[0][1]:1;
+  document.getElementById('originChart').innerHTML=top5.map(([o,c])=>{
+    return `<div class="bar-row"><div class="bar-label" style="font-size:0.65rem;">${o}</div><div class="bar-track"><div class="bar-fill" style="width:${(c/maxO)*100}%;background:#a78bfa;"></div></div><div class="bar-count">${c}</div></div>`;
+  }).join('');
+}
+
+function selectEntry(id){
+  const entry=entries.find(e=>e.id===id);
+  if(!entry) return;
+  currentEntry=entry;tabCache={};currentTab='overview';
+  sideFilter();
+  document.getElementById('welcomeScreen').style.display='none';
+  document.getElementById('dashboardPanel').style.display='none';
+  document.getElementById('aiSearchResult').style.display='none';
+  document.getElementById('detailPanel').style.display='block';
+  const cm=catMeta[entry.cat];
+  document.getElementById('detailPanel').style.setProperty('--entry-color',cm.color);
+  document.getElementById('dNum').textContent=`#${String(entry.id).padStart(3,'0')} · ${entry.origin}`;
+  document.getElementById('dTitle').textContent=entry.ku;
+  document.getElementById('dEn').textContent=entry.en;
+  const stars='⭐'.repeat(entry.rarity)+'☆'.repeat(5-entry.rarity);
+  document.getElementById('dMeta').innerHTML=`
+    <div class="meta-chip type-cat cat-${entry.cat}">${cm.emoji} ${cm.label}</div>
+    <div class="meta-chip" style="background:rgba(79,142,247,0.1);color:#60a5fa;border-color:rgba(79,142,247,0.3)">🔬 ${(entry.discovered||'').split('—')[0].trim()}</div>
+    <div class="meta-chip" style="background:rgba(245,158,11,0.1);color:#fbbf24;border-color:rgba(245,158,11,0.3)">${stars} دەگمەنی</div>
+    <div class="meta-chip" style="background:rgba(16,185,129,0.1);color:#34d399;border-color:rgba(16,185,129,0.3);cursor:pointer;" onclick="getDiseaseDetails('${entry.en.replace(/'/g,"\\'")}')">📖 Wikipedia</div>
+  `;
+  document.querySelectorAll('.ai-content-tab').forEach((t,i)=>t.classList.toggle('active',i===0));
+  loadTab('overview');
+}
+
+function showTab(tab,btn){
+  currentTab=tab;
+  document.querySelectorAll('.ai-content-tab').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  loadTab(tab);
+}
+
+function loadTab(tab){
+  if(tabCache[tab]){document.getElementById('aiContentBody').innerHTML=tabCache[tab];return;}
+  document.getElementById('aiContentBody').innerHTML=`<div class="loading-state"><div class="dna-spinner"></div><div class="loading-text">AI زانیاری ئامادە دەکات...</div></div>`;
+  fetchTabContent(currentEntry,tab);
+}
+
+async function fetchTabContent(entry,tab){
+  const prompts={
+    overview:`بەکوردی سۆرانی، زانیاری گشتی و تەواو بدەرەوە لەبارەی: ${entry.ku} (${entry.en})\nشرۆڤە بکە: چییە؟ چۆن کاردەکات؟ لە کوێ بینراوە؟ دێمۆگرافی کەی گریبانی دەگرێت؟\nبەکاربهێنە سەردێڕ و لیست و پاراگراف.`,
+    causes:`بەکوردی سۆرانی، هۆکارەکانی توشبوونی ${entry.ku} بنووسە.`,
+    symptoms:`بەکوردی سۆرانی، نیشانەکانی ${entry.ku} تەواو بنووسە.`,
+    treatment:`بەکوردی سۆرانی، چارەسەری ${entry.ku} تەواو بنووسە.`,
+    plants:`بەکوردی سۆرانی، ڕووەک و داروی سروشتیی ${entry.ku} بنووسە.`,
+    discovery:`بەکوردی سۆرانی، مێژووی دۆزینەوەی ${entry.ku} بنووسە.`,
+    stats:`بەکوردی سۆرانی، ئامارەکانی ${entry.ku} بنووسە.`
+  };
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:prompts[tab]||`زانیاری ${entry.ku} بنووسە`}]})
+    });
+    const data=await res.json();
+    const raw=data.content?.map(b=>b.text||'').join('\n')||"هیچ وەڵامێک نەگەیشت.";
+    const html=formatResponse(raw);
+    tabCache[tab]=html;
+    if(currentEntry===entry&&currentTab===tab) document.getElementById('aiContentBody').innerHTML=html;
+  }catch(e){
+    const errHtml=`<div class="ai-response"><p style="color:var(--accent5)">❌ هەڵەیەک ڕووی دا: ${e.message}</p></div>`;
+    tabCache[tab]=errHtml;
+    document.getElementById('aiContentBody').innerHTML=errHtml;
+  }
+}
+
+function formatResponse(text){
+  let html=text
+    .replace(/###\s*(.+)/g,'<h3>🔹 $1</h3>')
+    .replace(/##\s*(.+)/g,'<h3>$1</h3>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/^[-•]\s+(.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>.*<\/li>\n?)+/gs,m=>`<ul>${m}</ul>`)
+    .replace(/\n\n/g,'</p><p>');
+  return `<div class="ai-response"><p>${html}</p></div>`;
+}
+
+async function askQuestion(){
+  const input=document.getElementById('askInput');
+  const q=input.value.trim();
+  if(!q||!currentEntry) return;
+  input.value='';
+  document.getElementById('askBtn').disabled=true;
+  const body=document.getElementById('aiContentBody');
+  body.innerHTML+=`<div class="ai-response"><h3>❓ ${q}</h3><div class="loading-state"><div class="dna-spinner"></div></div></div>`;
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:`بەکوردی سۆرانی وەڵامی ئەم پرسیارە بدەرەوە لەبارەی ${currentEntry.ku} (${currentEntry.en}):\n${q}`}]})
+    });
+    const data=await res.json();
+    const raw=data.content?.map(b=>b.text||'').join('\n')||"وەڵام نەگەیشت.";
+    const divs=body.querySelectorAll('.ai-response');
+    const last=divs[divs.length-1];
+    if(last) last.innerHTML=`<h3>❓ ${q}</h3>${formatResponse(raw).replace('<div class="ai-response">','').replace('</div>','')}`;
+  }catch(e){body.innerHTML+=`<div class="ai-response"><p style="color:var(--accent5)">هەڵە: ${e.message}</p></div>`;}
+  document.getElementById('askBtn').disabled=false;
+}
+
+async function aiGlobalLook(){
+  const q=document.getElementById('aiGlobalSearch').value.trim();
+  if(!q) return;
+  document.getElementById('welcomeScreen').style.display='none';
+  document.getElementById('detailPanel').style.display='none';
+  document.getElementById('dashboardPanel').style.display='none';
+  document.getElementById('aiSearchResult').style.display='block';
+  const body=document.getElementById('aiSearchBody');
+  body.innerHTML=`<div class="loading-state"><div class="dna-spinner"></div><div class="loading-text">AI گەڕان دەکات لە ${q}...</div></div>`;
+  searchLastEntry=q;
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:`بەکوردی سۆرانی، زانیاری تەواو بدەرەوە لەبارەی: ${q}\nتێیدا بێت: چییە؟ هۆکار؟ نیشانەکان؟ چارەسەر؟ داری دەرمانی سروشتی؟ دۆزینەوە؟ ئامار؟`}]})
+    });
+    const data=await res.json();
+    const raw=data.content?.map(b=>b.text||'').join('\n')||"وەڵام نەگەیشت.";
+    body.innerHTML=formatResponse(raw);
+  }catch(e){body.innerHTML=`<div class="ai-response"><p style="color:var(--accent5)">هەڵە: ${e.message}</p></div>`;}
+}
+
+async function askQuestion2(){
+  const input=document.getElementById('askInput2');
+  const q=input.value.trim();
+  if(!q) return;
+  input.value='';
+  document.getElementById('askBtn2').disabled=true;
+  const body=document.getElementById('aiSearchBody');
+  body.innerHTML+=`<div class="ai-response"><h3>❓ ${q}</h3><div class="loading-state"><div class="dna-spinner"></div></div></div>`;
+  try{
+    const res=await fetch("https://api.anthropic.com/v1/messages",{
+      method:"POST",headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:`بەکوردی سۆرانی وەڵامی ئەم پرسیارە بدەرەوە لەبارەی ${searchLastEntry}:\n${q}`}]})
+    });
+    const data=await res.json();
+    const raw=data.content?.map(b=>b.text||'').join('\n')||"وەڵام نەگەیشت.";
+    const divs=body.querySelectorAll('.ai-response');
+    const last=divs[divs.length-1];
+    if(last) last.innerHTML=`<h3>❓ ${q}</h3>${formatResponse(raw).replace('<div class="ai-response">','').replace('</div>','')}`;
+  }catch(e){body.innerHTML+=`<div class="ai-response"><p style="color:var(--accent5)">هەڵە: ${e.message}</p></div>`;}
+  document.getElementById('askBtn2').disabled=false;
+}
+
+function openAdminModal(){
+  if(isLoggedIn){renderAdminList();document.getElementById('adminModal').classList.add('show');}
+  else document.getElementById('loginModal').classList.add('show');
+}
+
+function doLogin(){
+  const u=document.getElementById('loginUser').value;
+  const p=document.getElementById('loginPass').value;
+  if(u==='admin'&&p==='1234'){
+    isLoggedIn=true;
+    document.getElementById('loginModal').classList.remove('show');
+    renderAdminList();
+    document.getElementById('adminModal').classList.add('show');
+  } else {
+    showNotif('❌ ناوی بەکارهێنەر یان تێپەڕوشم هەڵەیە!','#ef4444');
+  }
+}
+
+function addEntry(){
+  const ku=document.getElementById('newKu').value.trim();
+  const en=document.getElementById('newEn').value.trim();
+  const cat=document.getElementById('newCat').value;
+  const discovered=document.getElementById('newDiscovered').value.trim()||'نامەعلووم';
+  const origin=document.getElementById('newOrigin').value.trim()||'جیهانی';
+  const rarity=parseInt(document.getElementById('newRarity').value)||3;
+  if(!ku||!en){showNotif('❗ ناوی کوردی و ئینگلیزی پێویستە!','#f59e0b');return;}
+  entries.unshift({id:Date.now(),ku,en,cat,discovered,origin,rarity});
+  saveDB();init();
+  ['newKu','newEn','newDiscovered','newOrigin'].forEach(id=>document.getElementById(id).value='');
+  renderAdminList();
+  showNotif(`✅ ${ku} زیاد کرا!`,'#10b981');
+}
+
+function deleteEntry(id){
+  if(!confirm('ئایا دڵنیایت لە سڕینەوە؟')) return;
+  entries=entries.filter(e=>e.id!==id);
+  if(currentEntry&&currentEntry.id===id){
+    currentEntry=null;
+    document.getElementById('detailPanel').style.display='none';
+    document.getElementById('welcomeScreen').style.display='flex';
+  }
+  saveDB();init();renderAdminList();
+  showNotif('🗑️ سڕایەوە','#ef4444');
+}
+
+function toggleEdit(id){
+  const form=document.getElementById('edit-form-'+id);
+  if(!form) return;
+  const isOpen=form.classList.contains('open');
+  document.querySelectorAll('.inline-edit.open').forEach(f=>f.classList.remove('open'));
+  if(!isOpen) form.classList.add('open');
+}
+
+function saveEdit(id){
+  const entry=entries.find(e=>e.id===id);
+  if(!entry) return;
+  const get=field=>document.getElementById(`ef-${id}-${field}`)?.value?.trim();
+  const ku=get('ku');const en=get('en');
+  if(!ku||!en){showNotif('❗ ناوی کوردی و ئینگلیزی پێویستە!','#f59e0b');return;}
+  entry.ku=ku;entry.en=en;entry.cat=get('cat');
+  entry.rarity=parseInt(get('rarity'))||entry.rarity;
+  entry.discovered=get('discovered')||entry.discovered;
+  entry.origin=get('origin')||entry.origin;
+  saveDB();init();
+  if(currentEntry&&currentEntry.id===id){currentEntry=entry;tabCache={};selectEntry(id);}
+  renderAdminList();
+  showNotif(`✅ ${ku} نوێ کرایەوە!`,'#10b981');
+}
+
+function renderAdminList(){
+  const q=(document.getElementById('adminSearch')?.value||'').toLowerCase();
+  let filtered=entries;
+  if(q) filtered=entries.filter(e=>e.ku.toLowerCase().includes(q)||e.en.toLowerCase().includes(q));
+  document.getElementById('adminCount').textContent=entries.length;
+  document.getElementById('adminList').innerHTML=filtered.slice(0,50).map(e=>{
+    const cm=catMeta[e.cat];
+    const stars='⭐'.repeat(e.rarity);
+    return `<div class="admin-entry" id="ae-${e.id}">
+      <div class="admin-entry-header" onclick="toggleEdit(${e.id})">
+        <div class="admin-entry-info">
+          <div class="admin-entry-name">${cm.emoji} ${e.ku}</div>
+          <div class="admin-entry-en">${e.en}</div>
+          <div class="admin-entry-badges">
+            <span class="admin-badge" style="background:color-mix(in srgb,${cm.color} 15%,transparent);color:${cm.color}">${cm.label}</span>
+            <span class="admin-badge" style="background:rgba(245,158,11,0.12);color:#fbbf24">${stars}</span>
+            <span class="admin-badge" style="background:rgba(100,116,139,0.12);color:var(--text3)">📍 ${e.origin}</span>
+          </div>
+        </div>
+        <div class="admin-entry-actions">
+          <button class="edit-btn" onclick="event.stopPropagation();toggleEdit(${e.id})">✏️ دەستکاری</button>
+          <button class="del-btn" onclick="event.stopPropagation();deleteEntry(${e.id})">🗑️</button>
+        </div>
+      </div>
+      <div class="inline-edit" id="edit-form-${e.id}">
+        <div class="inline-form-grid">
+          <div class="inline-field"><label>ناوی کوردی *</label><input id="ef-${e.id}-ku" type="text" value="${e.ku.replace(/"/g,'&quot;')}"></div>
+          <div class="inline-field"><label>ناوی ئینگلیزی *</label><input id="ef-${e.id}-en" type="text" value="${e.en.replace(/"/g,'&quot;')}"></div>
+          <div class="inline-field"><label>جۆر</label>
+            <select id="ef-${e.id}-cat">
+              ${Object.entries(catMeta).map(([k,v])=>`<option value="${k}" ${e.cat===k?'selected':''}>${v.emoji} ${v.label}</option>`).join('')}
+            </select>
+          </div>
+          <div class="inline-field"><label>دەگمەنی</label>
+            <select id="ef-${e.id}-rarity">
+              ${[1,2,3,4,5].map(r=>`<option value="${r}" ${e.rarity===r?'selected':''}>⭐ ${r}</option>`).join('')}
+            </select>
+          </div>
+          <div class="inline-field"><label>دۆزینەوە</label><input id="ef-${e.id}-discovered" type="text" value="${(e.discovered||'').replace(/"/g,'&quot;')}"></div>
+          <div class="inline-field"><label>مەنشە</label><input id="ef-${e.id}-origin" type="text" value="${(e.origin||'').replace(/"/g,'&quot;')}"></div>
+        </div>
+        <div class="inline-save-row">
+          <button class="inline-save" onclick="saveEdit(${e.id})">💾 پاشەکەوتکردن</button>
+          <button class="inline-cancel" onclick="toggleEdit(${e.id})">داخستن</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+  if(filtered.length>50){
+    document.getElementById('adminList').innerHTML+=`<div style="text-align:center;padding:0.75rem;color:var(--text3);font-size:0.78rem;">... و ${filtered.length-50} تۆماری تر.</div>`;
+  }
+}
+
+function exportData(){
+  const blob=new Blob([JSON.stringify(entries,null,2)],{type:'application/json'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`encyclopedia-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  showNotif('📤 فایلەکە دابەزاندرا','#10b981');
+}
+
+function importData(event){
+  const file=event.target.files[0];
+  if(!file) return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      if(!Array.isArray(data)) throw new Error('فۆرماتی فایل هەڵەیە');
+      if(!confirm(`${data.length} تۆمار دۆزرایەوە. ئایا دەتەوێ داتابەیسەکە بگۆرێت؟`)) return;
+      entries=data;saveDB();init();renderAdminList();
+      showNotif(`✅ ${data.length} تۆمار هاوردەکرا`,'#10b981');
+    }catch(err){showNotif('❌ هەڵە: '+err.message,'#ef4444');}
+  };
+  reader.readAsText(file);
+  event.target.value='';
+}
+
+function resetToDefault(){
+  if(!confirm('⚠️ دڵنیایت؟')) return;
+  entries=[...defaultEntries];saveDB();init();renderAdminList();
+  showNotif('🔄 داتابەیس گەڕایەوە بۆ بنەڕەت','#f59e0b');
+}
+
+function closeModal(id){document.getElementById(id).classList.remove('show');}
+
+function showNotif(msg,color='#10b981'){
+  const n=document.getElementById('notif');
+  n.textContent=msg;n.style.background=color;
+  n.classList.add('show');
+  setTimeout(()=>n.classList.remove('show'),2500);
+}
+
+document.querySelectorAll('.modal-overlay').forEach(m=>{
+  m.addEventListener('click',e=>{if(e.target===m) m.classList.remove('show');});
+});
+
+init();
+</script>
+</body>
+</html>
